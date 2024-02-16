@@ -38,11 +38,6 @@ class TimerScreenViewModel : ViewModel() {
         }
     }
 
-    private fun incrementPassedTime(passedTimeMS: Long) {
-        val overallPassedTimeInMS: Long = _state.value.passedMilliseconds
-        _state.update { currentState -> currentState.copy(passedMilliseconds = overallPassedTimeInMS + passedTimeMS) }
-    }
-
     fun stopTimer() {
         timerJob?.cancel()
         timerJob = null
